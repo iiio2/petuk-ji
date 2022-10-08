@@ -18,7 +18,7 @@ const Vacancy = () => {
         <h2>Vacancy</h2>
       </div>
       <div className="vacancy-list section-center">
-        <div className="row">
+        <div className="row g-4">
           {positions.map((position, index) => (
             <div className="col-sm-6" key={index}>
               <div className="card">

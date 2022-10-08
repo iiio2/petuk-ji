@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import ceo from "../images/ceo.jpg";
 import employee01 from "../images/employee01.jpg";
 import employee02 from "../images/employee02.jpg";
+import employee03 from "../images/employee03.jpg";
+import employee04 from "../images/employee04.jpg";
 
 const AboutUs = () => {
   const [name, setName] = useState("");
@@ -10,7 +13,12 @@ const AboutUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
+    if ((name, email, message)) {
+      toast("Email Sent! We'll contact you soon.");
+    }
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   const onDisabled = () => {
@@ -90,7 +98,7 @@ const AboutUs = () => {
           <div className="col-xs-12 col-sm-6 col-md-4">
             <div className="card">
               <img
-                src={employee02}
+                src={employee03}
                 className="card-img-top"
                 alt="employee two"
               />
@@ -104,7 +112,7 @@ const AboutUs = () => {
           <div className="col-xs-12 col-sm-6 col-md-4">
             <div className="card">
               <img
-                src={employee01}
+                src={employee04}
                 className="card-img-top"
                 alt="employee two"
               />
@@ -123,7 +131,21 @@ const AboutUs = () => {
                 alt="employee two"
               />
               <div className="card-body">
-                <h5 className="card-title">Marketing Analyst</h5>
+                <h5 className="card-title">Software Developer</h5>
+                <p className="card-text">- Robert M. Martin</p>
+              </div>
+            </div>
+          </div>
+          {/* card */}
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <div className="card">
+              <img
+                src={employee03}
+                className="card-img-top"
+                alt="employee two"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Accountant</h5>
                 <p className="card-text">- Robert M. Martin</p>
               </div>
             </div>
@@ -137,8 +159,8 @@ const AboutUs = () => {
                 alt="employee two"
               />
               <div className="card-body">
-                <h5 className="card-title">Marketing Analyst</h5>
-                <p className="card-text">- Robert M. Martin</p>
+                <h5 className="card-title">HR Executive</h5>
+                <p className="card-text">- Samuel Johnson</p>
               </div>
             </div>
           </div>
@@ -146,27 +168,13 @@ const AboutUs = () => {
           <div className="col-xs-12 col-sm-6 col-md-4">
             <div className="card">
               <img
-                src={employee02}
+                src={employee04}
                 className="card-img-top"
                 alt="employee two"
               />
               <div className="card-body">
-                <h5 className="card-title">Marketing Analyst</h5>
-                <p className="card-text">- Robert M. Martin</p>
-              </div>
-            </div>
-          </div>
-          {/* card */}
-          <div className="col-xs-12 col-sm-6 col-md-4">
-            <div className="card">
-              <img
-                src={employee02}
-                className="card-img-top"
-                alt="employee two"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Marketing Analyst</h5>
-                <p className="card-text">- Robert M. Martin</p>
+                <h5 className="card-title">Intern</h5>
+                <p className="card-text">- Alex Hales</p>
               </div>
             </div>
           </div>
@@ -180,7 +188,7 @@ const AboutUs = () => {
           <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="card">
               <div className="card-header">
-                <img className="img-fluid" src={ceo} alt="customer" />
+                <img className="img-fluid" src={employee02} alt="customer" />
                 <div className="card-header-info">
                   <h5>Thomas Smith</h5>
                   <span className="fa fa-star checked"></span>
@@ -188,6 +196,7 @@ const AboutUs = () => {
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star"></span>
+                  <p>Fantastic. Highly Recommended</p>
                 </div>
               </div>
             </div>
@@ -196,14 +205,15 @@ const AboutUs = () => {
           <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="card">
               <div className="card-header">
-                <img className="img-fluid" src={ceo} alt="customer" />
+                <img className="img-fluid" src={employee03} alt="customer" />
                 <div className="card-header-info">
-                  <h5>Thomas Smith</h5>
+                  <h5>Scot Mathew</h5>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star"></span>
+                  <p>Amazing. I enjoyed using the service.</p>
                 </div>
               </div>
             </div>
@@ -212,14 +222,15 @@ const AboutUs = () => {
           <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="card">
               <div className="card-header">
-                <img className="img-fluid" src={ceo} alt="customer" />
+                <img className="img-fluid" src={employee04} alt="customer" />
                 <div className="card-header-info">
-                  <h5>Thomas Smith</h5>
+                  <h5>Albert Max</h5>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star checked"></span>
                   <span className="fa fa-star"></span>
+                  <p>Very good indeed.</p>
                 </div>
               </div>
             </div>
@@ -233,6 +244,7 @@ const AboutUs = () => {
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
+              id="name"
               type="text"
               className="form-control"
               name="name"
@@ -243,6 +255,7 @@ const AboutUs = () => {
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
               className="form-control"
               name="email"
@@ -253,6 +266,7 @@ const AboutUs = () => {
           <div className="form-group">
             <label htmlFor="message">Message</label>
             <textarea
+              id="message"
               className="form-control"
               rows="3"
               value={message}

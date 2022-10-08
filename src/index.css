@@ -2,9 +2,13 @@
   --color-white: #fff;
   --color-black: #333;
   --padding: 3rem;
+  --letter-spacing: 2px;
 }
 
-/* About Us */
+body {
+  font-family: "Signika", sans-serif;
+  letter-spacing: var(--letter-spacing);
+}
 
 h1,
 h2,
@@ -15,10 +19,16 @@ h5 {
 }
 
 h2 {
-  font-size: 3rem !important;
+  font-size: 2rem !important;
   font-weight: 700 !important;
   margin-bottom: 0.7rem;
   padding: var(--padding) 0;
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 3rem !important;
+  }
 }
 
 img {
@@ -61,6 +71,8 @@ img {
   }
 }
 
+/* About Us */
+
 .about-us {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./images/about.jpg");
@@ -91,6 +103,7 @@ img {
   justify-content: flex-start;
   align-items: center;
   gap: 1.5rem;
+  border-bottom: 0 !important;
 }
 
 .testimonials .card-header-info .fa-star {
@@ -101,6 +114,14 @@ img {
 
 .contact-us .form-group {
   margin: 1rem 0;
+}
+
+.contact-us h2 {
+  margin-bottom: 0;
+}
+
+.contact-us .form-group:first-child {
+  margin-top: 0;
 }
 
 /* Vacancy */
