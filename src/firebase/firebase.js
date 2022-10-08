@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCjfHGht5-_YypNHgNtPg5Kn4tRXXBPE58",
@@ -10,3 +11,12 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+
+const db = getFirestore(firebaseApp);
+
+export default async function getVacancies() {
+  const vacancyCol = collection(db, "vacancy");
+  const vacancySnapshot = await getDocs(vacancyCol);
+  const vacancyList = vacancySnapshot.docs.map((doc) => doc.data());
+  return vacancyList;
+}
