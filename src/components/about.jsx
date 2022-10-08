@@ -1,11 +1,29 @@
+import { useState } from "react";
 import ceo from "../images/ceo.jpg";
 import employee01 from "../images/employee01.jpg";
 import employee02 from "../images/employee02.jpg";
 
 const AboutUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email, message);
+  };
+
+  const onDisabled = () => {
+    return (
+      name.trim().length === 0 ||
+      email.trim().length === 0 ||
+      message.trim().length === 0
+    );
+  };
+
   return (
     <>
-      <div className="about-us">
+      <div className="about-us banner">
         <h2>About Us</h2>
       </div>
 
@@ -211,20 +229,39 @@ const AboutUs = () => {
       {/* Contact Us */}
       <div className="contact-us section-center">
         <h2 className="text-center">Contact Us</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input type="text" className="form-control" name="name" />
+            <input
+              type="text"
+              className="form-control"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" className="form-control" name="email" />
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="form-group">
-            <label for="message">Message</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <label htmlFor="message">Message</label>
+            <textarea
+              className="form-control"
+              rows="3"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
           </div>
-          <button className="btn btn-info mb-5">Submit</button>
+          <button disabled={onDisabled()} className="btn btn-info mb-5">
+            Submit
+          </button>
         </form>
       </div>
     </>
