@@ -31,6 +31,7 @@ const Contact = ({ data, onSubmit, onChange, onDisabled }) => {
             <textarea
               id="message"
               className="form-control"
+              name="message"
               rows="3"
               value={data.message}
               onChange={onChange}
