@@ -1,0 +1,98 @@
+:root {
+  --color-white: #fff;
+}
+
+/* About Us */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.7rem;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
+
+.section-center {
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .section-center {
+    width: 80%;
+  }
+}
+
+.about-us {
+  height: 60vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./images/about.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-us h2 {
+  height: 100%;
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .about-us h2 {
+    justify-content: end;
+    align-items: flex-end;
+    padding: 1.2rem;
+  }
+}
+
+.about-us-description {
+  padding: 4rem 0;
+}
+
+.team-members span {
+  display: block;
+}
+
+/* Testimonials */
+
+.checked {
+  color: orange;
+}
+
+.testimonials img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.testimonials .card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.testimonials .card-header-info .fa-star {
+  margin: 0 0.1rem;
+}
+
+/* Contact Us */
+
+.contact-us .form-group {
+  margin: 1rem 0;
+}
