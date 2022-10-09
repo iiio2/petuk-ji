@@ -15,19 +15,28 @@ const Contact = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, message } = data;
     try {
       if ((name, email, message)) {
-        setData({ name: "", email: "", message: "" });
-        await emailjs.sendForm(
-          `${import.meta.env.VITE_EMAIL_SERVICE_ID}`,
-          `${import.meta.env.VITE_EMAIL_TEMPLATE_ID}`,
-          form.current,
-          `${import.meta.env.VITE_EMAIL_PUBLIC_KEY}`
-        );
+        emailjs
+          .sendForm(
+            `${import.meta.env.VITE_EMAIL_SERVICE_ID}`,
+            `${import.meta.env.VITE_EMAIL_TEMPLATE_ID}`,
+            form.current,
+            `${import.meta.env.VITE_EMAIL_PUBLIC_KEY}`
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+            },
+            (error) => {
+              console.log(error.text);
+            }
+          );
         toast.success("Email Sent! We'll contact you soon.");
+        setData({ name: "", email: "", message: "" });
       }
     } catch (ex) {
       toast.error("Expected error.");
