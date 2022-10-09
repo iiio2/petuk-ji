@@ -4,8 +4,8 @@ const teamMember = (img, title, name) => {
       <div className="card">
         <img src={img} className="card-img-top" alt="founder" />
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">- {name}</p>
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{title}</p>
         </div>
       </div>
     </div>

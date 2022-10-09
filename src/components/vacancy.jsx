@@ -24,7 +24,7 @@ const Vacancy = () => {
               <div className="card">
                 <div className="card-body">
                   <h6>{position.position}</h6>
-                  <p className="lead">{position.salary} /month</p>
+                  <p className="lead">&#36;{position.salary} /month</p>
                   {position.skills.map((skill) => (
                     <div
                       style={{ display: "inline-block" }}
