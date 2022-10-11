@@ -35,7 +35,7 @@ const Contact = () => {
               console.log(error.text);
             }
           );
-        toast.success("Email Sent! We'll contact you soon.");
+        toast.success("Your message is Sent! We'll contact you soon.");
         setData({ name: "", email: "", message: "" });
       }
     } catch (ex) {
